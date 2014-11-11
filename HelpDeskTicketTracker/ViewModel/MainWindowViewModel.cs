@@ -1,5 +1,4 @@
-﻿using HelpDeskTicketTracker.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HelpDeskTicketTracker.ViewModel
 {
-    public class MainWindowViewModel : IMainWindow
+    public class MainWindowViewModel 
     {
         private int _incident;
         private string _url;
