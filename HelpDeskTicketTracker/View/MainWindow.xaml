@@ -1,0 +1,53 @@
+﻿<Window x:Class="HelpDeskTicketTracker.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="400" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Viewbox Margin="5">
+            <Label Content="335th Current Ticket Count"/>
+        </Viewbox>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Margin="5">
+                <Label Content="Incident Ticket Count"/>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Margin="5">
+                <Label Content="{Binding Incident}"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Margin="5">
+                <Label Content="Request Ticket Count"/>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Margin="5">
+                <Label Content="{Binding Request}"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Margin="5">
+                <Label Content="{Binding LastUpdated}" />
+            </Viewbox>
+            <Viewbox Grid.Column="1" Margin="5">
+                <Label Content="{Binding URL}"/>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Window>
