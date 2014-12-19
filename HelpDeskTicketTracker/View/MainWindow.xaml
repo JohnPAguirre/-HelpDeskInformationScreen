@@ -10,7 +10,7 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Viewbox Margin="5">
-            <Label Content="335th Current Ticket Count"/>
+            <Label Content="Help Desk Current Ticket Count"/>
         </Viewbox>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

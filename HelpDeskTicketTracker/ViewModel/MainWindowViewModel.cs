@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelpDeskTicketTracker.WebServer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace HelpDeskTicketTracker.ViewModel
 {
-    public class MainWindowViewModel 
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
         private int _incident;
         private string _url;
         private int _request;
         private DateTime _lastUpdated;
+        private Tickets _tickets;
 
 
         public int Incident
@@ -70,11 +72,18 @@ namespace HelpDeskTicketTracker.ViewModel
 
         public MainWindowViewModel()
         {
-            this.Incident = 110;
+            this.Incident = 145;
             this.Request = 100;
             this._lastUpdated = DateTime.Now;
             SignalPropertyChanged("LastUpdated");
-            this.URL = @"http://172.0.0.1:8080";
+            this.URL = @"http://localhost:8777";
+            _tickets = TicketFactory.CreateTickets();
+            _tickets.PropertyChanged += (object sender, PropertyChangedEventArgs e) =>
+            {
+                this.Incident = _tickets.incidents;
+                this.Request = _tickets.requests;
+            };
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
